@@ -1,0 +1,20 @@
+{
+  "name": "jrsaunders/termite",
+  "description": "Composer Dev Loader",
+  "minimum-stability": "dev",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "John Saunders",
+      "email": "john@yettimedia.co.uk"
+    }
+  ],
+  "require": {
+    "php": ">=5.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Termite\\": "src/"
+    }
+  }
+}
