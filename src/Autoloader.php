@@ -17,6 +17,11 @@ class Autoloader
      */
     public static $DEV_VENDOR_PATH = '/dev_vendor';
 
+    /**
+     * Autoloader constructor.
+     * @param string $ENVIRONMENT
+     * @param string $DEV_VENDOR_PATH
+     */
     public function __construct($ENVIRONMENT = 'production', $DEV_VENDOR_PATH = '/dev_vendor')
     {
         static::setENVIRONMENT($ENVIRONMENT);
@@ -24,6 +29,10 @@ class Autoloader
         $this->registerAutoloader();
     }
 
+    /**
+     * @param $class
+     * @return bool|void
+     */
     public function termiteComposer($class)
     {
         $devVendorDir = static::getDEVVENDORPATH();
@@ -72,6 +81,9 @@ class Autoloader
         }
     }
 
+    /**
+     * Register Autoloader
+     */
     public function registerAutoloader()
     {
         spl_autoload_register(array($this, 'termiteComposer'), true, true);
